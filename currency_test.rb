@@ -24,15 +24,16 @@ class CurrencyTest < Minitest::Test
   end
 
   def test_currency_can_be_added
-
-
-
+    usa_currency = Currency.new(100, "USD")
+    usa2_currency = Currency.new(100, "USD")
+    result = usa_currency.+(usa2_currency)
+    assert_equal 200, result.amount
   end
 
-  #
-  # def test_currency_can_be_subracted
-  #
-  # end
+   def test_currency_can_be_subracted
+
+   end
+
   #
   # def test_currency_gets_an_error
   #
