@@ -18,5 +18,11 @@ class Currency
     end
   end
 
+  def -(other)
+    if self.code == other.code
+      total = self.amount - other.amount
+      return Currency.new(total, self.code)
+    end
+  end
 
 end
