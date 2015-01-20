@@ -5,9 +5,10 @@ class Currency
     @code = code
   end
 
-  def currency(amount, code)
-    amount = []
-    code = []
+  def ==(currency)
+    if self.amount == currency.amount
+      return true
+    end
   end
 
 
