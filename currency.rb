@@ -1,6 +1,14 @@
-def currency_type(amount, code)
-  amount_array = amount.split("")
-  code_array = code.split("")
-end
+class Currency
+  attr_accessor :amount, :code
+  def initialize(amount, code)
+    @amount = amount
+    @code = code
+  end
 
-options = []
+  def currency(amount, code)
+    amount = []
+    code = []
+  end
+
+
+end
