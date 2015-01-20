@@ -11,6 +11,9 @@ class CurrencyTest < Minitest::Test
     assert currency_type("", "")
   end
 
+  def test_currency_equal_to_object
+    assert_equal currency_type("", "").class, Array
+  end
 
 
 end
