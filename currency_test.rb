@@ -12,17 +12,23 @@ class CurrencyTest < Minitest::Test
   end
 
   def test_currency_has_two_parameters
-    usa_currency = Currency.new(100, "USD")
+    assert Currency.new(100, "USD")
   end
 
   def test_currency_equal_to_object
     usa_currency = Currency.new(100, "USD")
     usa2_currency = Currency.new(100, "USD")
+    canad_currency = Currency.new(100, "CAN")
+    assert usa_currency == usa2_currency
+    refute canad_currency == usa_currency
   end
 
-  # def test_currency_can_be_added
-  #
-  # end
+  def test_currency_can_be_added
+
+
+
+  end
+
   #
   # def test_currency_can_be_subracted
   #
