@@ -61,19 +61,24 @@ class CurrencyTest < Minitest::Test
   end
 
   def test_09_currency_converter_hash
-    assert CurrencyConverter.new({USD: 1.0, EUR: 0.74})
+    assert CurrencyConverter.new({USD: 1.0, EUR: 0.86})
   end
 
   def test_10_converter_return_equal_code
-    currency_converter = CurrencyConverter.new({USD: 1.0, EUR: 0.74})
+    currency_converter = CurrencyConverter.new({USD: 1.0, EUR: 0.86})
     assert currency_converter.convert(Currency.new(1, :USD), :USD) == Currency.new(1, :USD)
   end
 
   def test_11_converter_currency_different_code
-    currency_converter = CurrencyConverter.new({USD: 1.0, EUR: 0.74})
-    assert_equal currency_converter.convert(Currency.new(1, :USD), :EUR), Currency.new(0.74, :EUR)
+    currency_converter = CurrencyConverter.new({USD: 1.0, EUR: 0.86})
+    assert_equal currency_converter.convert(Currency.new(1, :USD), :EUR), Currency.new(0.86, :EUR)
   end
 
+  def test_12_converter_currency_three_codes_and_rates
+    currency_converter = CurrencyConverter.new({USD: 1, EUR: 0.86, RUB: 65.28})
+    assert_in_delta 65.28, currency_converter.convert(Currency.new(1, :USD), :RUB).amount, 0.05
+    assert_in_delta 75.95, currency_converter.convert(Currency.new(1, :EUR), :RUB).amount, 0.05
+  end
 
 
 
