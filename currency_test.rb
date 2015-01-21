@@ -37,10 +37,13 @@ class CurrencyTest < Minitest::Test
      assert_equal 1, result.amount
    end
 
-  #
-  # def test_currency_gets_an_error
-  #
-  # end
+  def test_currency_gets_an_error
+    usa_currency = Currency.new(100, "USD")
+    usa2_currency = Currency.new(100, "USD")
+    assert_raises DifferentCurrencyCodeError
+    result = true
+
+  end
   #
   # def test_currency_can_be_multiplied
   #
