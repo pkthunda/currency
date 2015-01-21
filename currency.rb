@@ -1,5 +1,5 @@
 class Currency
-  attr_accessor :amount, :code
+  attr_accessor :amount, :code 
   def initialize(amount, code)
     @amount = amount
     @code = code
