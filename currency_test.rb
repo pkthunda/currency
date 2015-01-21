@@ -61,7 +61,15 @@ class CurrencyTest < Minitest::Test
   end
 
   def test_09_currency_converter_hash
+    assert CurrencyConverter.new({USD: 1.0, EUR: 0.74})
   end
+
+  def test_10_return_equal_objects
+    currency_converter = CurrencyConverter.new({USD: 1.0, EUR: 0.74})
+    assert currency_converter.convert(Currency.new(1, :USD), :USD) == Currency.new(1, :USD)
+  end
+
+
 
 
 
