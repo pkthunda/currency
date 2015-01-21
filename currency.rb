@@ -15,6 +15,8 @@ class Currency
     if self.code == other.code
       total = self.amount + other.amount
       return Currency.new(total, self.code)
+    else
+      raise DifferentCurrencyCodeError, "No, no, no."
     end
   end
 
@@ -22,6 +24,8 @@ class Currency
     if self.code == other.code
       total = self.amount - other.amount
       return Currency.new(total, self.code)
+    else
+      raise DifferentCurrencyCodeError, "You can't do this"
     end
   end
 

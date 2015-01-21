@@ -40,12 +40,12 @@ class CurrencyTest < Minitest::Test
 
   def test_currency_gets_an_error
     usa_currency = Currency.new(100, "USD")
-    usa2_currency = Currency.new(100, "USD")
+    usa2_currency = Currency.new(100, "EURO")
     assert_raises DifferentCurrencyCodeError do
-      (usa_currency + usa2_currency)
+      usa_currency + usa2_currency
     end
     assert_raises DifferentCurrencyCodeError do
-      (usa_currency - usa2_currency)
+      usa_currency - usa2_currency
     end
   end
 
