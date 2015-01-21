@@ -1,0 +1,1 @@
+class DifferentCurrencyCodeError < StandardError
