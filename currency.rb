@@ -6,9 +6,7 @@ class Currency
   end
 
   def ==(other)
-    if self.amount == other.amount && self.code == other.code
-      return true
-    end
+    self.amount == other.amount && self.code == other.code
   end
 
   def +(other)
@@ -28,5 +26,11 @@ class Currency
       raise DifferentCurrencyCodeError, "You can't do this"
     end
   end
+
+  def *(num)
+    Currency.new(self.amount * num, code)
+  end
+
+
 
 end

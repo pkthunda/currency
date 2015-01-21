@@ -49,11 +49,13 @@ class CurrencyTest < Minitest::Test
     end
   end
 
+  def test_currency_can_be_multiplied
+    usa_currency = Currency.new(100, "USD")
+    assert usa_currency * 9 == Currency.new(900, "USD")
+    assert usa_currency * 2.5 == Currency.new(250, "USD")
+  end
 
-  #
-  # def test_currency_can_be_multiplied
-  #
-  # end
+
 
 
 
